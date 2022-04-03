@@ -1,4 +1,4 @@
-package com.gademo.newarchitecture;
+package com.ideasimov.gademo.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,8 +19,8 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.gademo.BuildConfig;
-import com.gademo.newarchitecture.components.MainComponentsRegistry;
+import com.ideasimov.gademo.BuildConfig;
+import com.ideasimov.gademo.newarchitecture.components.MainComponentsRegistry;
 import com.gademo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;

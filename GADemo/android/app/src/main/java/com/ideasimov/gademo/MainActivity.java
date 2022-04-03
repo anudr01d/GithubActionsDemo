@@ -1,4 +1,4 @@
-package com.gademo;
+package com.ideasimov.gademo;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
