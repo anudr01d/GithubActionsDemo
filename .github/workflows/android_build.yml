@@ -48,22 +48,20 @@ jobs:
           key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-caches-
-      - name: Check android path
-        run: pwd && cd .. && ls
         
       - name: Make Gradlew Executable
-        run: cd android && chmod +x ./gradlew
+        run: cd GADemo/android && chmod +x ./gradlew
 
       - name: Generate App APK
         run: |
-          cd android && ./gradlew assembleRelease --no-daemon
+          cd GADemo/android && ./gradlew assembleRelease --no-daemon
 
       ## sign generated apk
       - name: Sign APK
         id: sign_app
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: android/app/build/outputs/apk/release
+          releaseDirectory: GADemo/android/app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.ANDROID_SIGNING_KEY }}
           alias: ${{ secrets.ANDROID_ALIAS }}
           keyStorePassword: ${{ secrets.ANDROID_KEY_STORE_PASSWORD }}
