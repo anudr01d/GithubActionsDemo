@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies # install project deps with --frozen-lockfile to make sure we will have the same packages version (recommended  on running yarn install on ci)
-        run: yarn install --frozen-lockfile
+        run: cd GADemo && yarn install --frozen-lockfile
 
       ## configure cache for gradle : will help to reduce build time
       - name: Cache Gradle Wrapper
