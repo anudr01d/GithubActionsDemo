@@ -17,7 +17,7 @@ jobs:
       - name: Set up our JDK environment # setup JDK environment: mandatory as we need to build  android project
         uses: actions/setup-java@v1.4.3
         with:
-          java-version: 1.8
+          java-version: 11
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -31,10 +31,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install dependencies # install project deps with --frozen-lockfile to make sure we will have the same packages version ( very recommended  on running yarn install on ci)
+      - name: Install dependencies # install project deps with --frozen-lockfile to make sure we will have the same packages version (recommended  on running yarn install on ci)
         run: yarn install --frozen-lockfile
 
-      ## configure cash for gradle : will help to reduce build time
+      ## configure cache for gradle : will help to reduce build time
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
         with:
