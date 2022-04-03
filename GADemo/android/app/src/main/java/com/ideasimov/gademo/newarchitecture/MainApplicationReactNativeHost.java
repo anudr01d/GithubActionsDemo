@@ -21,7 +21,7 @@ import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
 import com.ideasimov.gademo.BuildConfig;
 import com.ideasimov.gademo.newarchitecture.components.MainComponentsRegistry;
-import com.gademo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.ideasimov.gademo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.gademo.newarchitecture.modules;
+package com.ideasimov.gademo.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
