@@ -40,7 +40,7 @@ jobs:
         run: pwd
 
       - name: Install dependencies
-        run: cd GADemo && yarn install --frozen-lockfile --network-timeout 300000
+        run: cd .. && yarn install --frozen-lockfile --network-timeout 300000 && cd ios
 
       - name: Check Directory
         run: pwd
@@ -69,7 +69,7 @@ jobs:
         run: pwd
 
       - name: Install Pods
-        run: cd GADemo && cd ios && pod install --repo-update && cd ..
+        run: pod install --repo-update && cd ..
         
       - name: Check Directory
         run: pwd
