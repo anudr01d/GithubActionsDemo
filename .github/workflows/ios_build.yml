@@ -43,7 +43,7 @@ jobs:
         run: cd GADemo && yarn install --frozen-lockfile --network-timeout 300000
 
       - name: Check Directory
-        run: echo pwd
+        run: pwd
         
       - name: Setup Ruby (bundle)
         uses: ruby/setup-ruby@v1
@@ -52,7 +52,7 @@ jobs:
           bundler-cache: true
     
       - name: Check Directory
-        run: echo pwd
+        run: pwd
 
       - name: Restore Pods cache
         uses: actions/cache@v2
@@ -66,10 +66,13 @@ jobs:
             ${{ runner.os }}-pods-
             
       - name: Check Directory
-        run: echo pwd
+        run: pwd
 
       - name: Install Pods
         run: cd GADemo && cd ios && pod install --repo-update && cd ..
+        
+      - name: Check Directory
+        run: pwd
 
       - name: Build IOS App
         uses: yukiarrr/ios-build-action@v1.4.0
