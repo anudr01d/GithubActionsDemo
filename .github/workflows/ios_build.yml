@@ -17,9 +17,15 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
+      - name: Check Directory
+        run: echo pwd
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Check Directory
+        run: pwd
 
       - name: Restore node_modules from cache
         uses: actions/cache@v2
@@ -30,9 +36,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Check Directory
+        run: pwd
+
       - name: Install dependencies
         run: cd GADemo && yarn install --frozen-lockfile --network-timeout 300000
 
+      - name: Check Directory
+        run: echo pwd
+        
       - name: Setup Ruby (bundle)
         uses: ruby/setup-ruby@v1
         with:
@@ -43,7 +55,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            GADemo/ios/Pods
+            ios/Pods
             ~/Library/Caches/CocoaPods
             ~/.cocoapods
           key: ${{ runner.os }}-pods-${{ hashFiles('ios/Podfile.lock') }}
@@ -51,7 +63,7 @@ jobs:
             ${{ runner.os }}-pods-
 
       - name: Install Pods
-        run: cd GADemo && cd ios && pod install --repo-update && cd .. && cd ..
+        run: cd ios && pod install --repo-update && cd ..
 
       - name: Build IOS App
         uses: yukiarrr/ios-build-action@v1.4.0
