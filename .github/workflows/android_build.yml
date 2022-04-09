@@ -73,5 +73,5 @@ jobs:
         with:
           appId: ${{secrets.ANDROID_FIREBASE_APP_ID}}
           token: ${{secrets.ANDROID_FIREBASE_TOKEN}}
-          groups: testers
+          groups: IdeasimovTesters
           file: ${{steps.sign_app.outputs.signedReleaseFile}}
